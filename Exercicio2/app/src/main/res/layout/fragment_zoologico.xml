@@ -42,6 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_8"
+        android:backgroundTint="@color/laranja"
         android:text="@string/adicionar"
         app:layout_constraintEnd_toEndOf="@+id/etDescricaoAnimal"
         app:layout_constraintStart_toStartOf="@+id/etDescricaoAnimal"
