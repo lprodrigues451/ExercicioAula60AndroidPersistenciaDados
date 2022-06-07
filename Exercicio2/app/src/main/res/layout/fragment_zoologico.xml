@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".zoologico.ZoologicoFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/detalhe_app"
+        android:textSize="@dimen/font_size_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNomeAnimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:hint="@string/hint_animal"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/etDescricaoAnimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/descricao_animal"
+        app:layout_constraintEnd_toEndOf="@+id/etNomeAnimal"
+        app:layout_constraintStart_toStartOf="@+id/etNomeAnimal"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeAnimal" />
+
+    <Button
+        android:id="@+id/bvAdicionar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/adicionar"
+        app:layout_constraintEnd_toEndOf="@+id/etDescricaoAnimal"
+        app:layout_constraintStart_toStartOf="@+id/etDescricaoAnimal"
+        app:layout_constraintTop_toBottomOf="@+id/etDescricaoAnimal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaAnimal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bvAdicionar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
