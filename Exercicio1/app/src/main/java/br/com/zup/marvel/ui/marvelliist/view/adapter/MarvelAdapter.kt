@@ -1,20 +1,20 @@
-package br.com.zup.marvel.adapter
+package br.com.zup.marvel.ui.marvelliist.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.marvel.databinding.MarvelItemBinding
-import br.com.zup.marvel.model.Marvel
+import br.com.zup.marvel.domain.model.Marvel
 
 class MarvelAdapter(
-    private var listaMarvel: MutableList<Marvel>,
-    private val clickProduto: (marvel: Marvel) -> Unit
+    private var marvelList: MutableList<Marvel>,
+    private val clickMarvel: (marvel: Marvel) -> Unit
 ):
     RecyclerView.Adapter<MarvelAdapter.ViewHolder>(){
 
     class ViewHolder(val binding: MarvelItemBinding ) : RecyclerView.ViewHolder(binding.root){
-        fun adicionarInformacoesView(marvel : Marvel) {
-            binding.rvItemNomePersonagem.text = marvel.getNome()
+        fun showMarvelInfo(marvel : Marvel) {
+            binding.rvItemNomePersonagem.text = marvel.nome
         }
     }
 
@@ -24,22 +24,23 @@ class MarvelAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val marvel = listaMarvel[position]
-        holder.adicionarInformacoesView(marvel)
+        val marvel = marvelList[position]
+        holder.showMarvelInfo(marvel)
         holder.binding.cvItemMarvel.setOnClickListener {
-           clickProduto(marvel)
+           clickMarvel(marvel)
         }
+//        ATENÇÃO
+//        holder.showMarvelInfo(marvel)
     }
 
-    override fun getItemCount(): Int= listaMarvel.size
+    override fun getItemCount(): Int= marvelList.size
 
-    fun atualizarListaDePersonagemMArvel(novaListaMarvel: MutableList<Marvel>){
-        if (listaMarvel.size == 0){
-            listaMarvel = novaListaMarvel
+    fun updateMarvelList(novaListaMarvel: List<Marvel>){
+        if (marvelList.size == 0){
+            marvelList = novaListaMarvel as MutableList<Marvel>
         }else{
-            listaMarvel.addAll(novaListaMarvel)
+            marvelList.addAll(novaListaMarvel)
         }
-
         notifyDataSetChanged()
     }
 

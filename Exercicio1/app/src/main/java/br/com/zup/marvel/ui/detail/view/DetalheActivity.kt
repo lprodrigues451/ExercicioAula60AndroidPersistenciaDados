@@ -1,15 +1,13 @@
-package br.com.zup.marvel.detalhe
+package br.com.zup.marvel.ui.detail.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import br.com.zup.marvel.CHAVE_MARVEL
-import br.com.zup.marvel.R
 import br.com.zup.marvel.databinding.ActivityDetalheBinding
-import br.com.zup.marvel.databinding.ActivityMainBinding
-import br.com.zup.marvel.model.Marvel
+import br.com.zup.marvel.domain.model.Marvel
 
-class Detalhe : AppCompatActivity() {
+class DetalheActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetalheBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +27,8 @@ class Detalhe : AppCompatActivity() {
         }
     }
     private fun exibirInformacoes(marvel: Marvel){
-        binding.descricaoNomePersonagem.text = marvel.getNome()
-        binding.descricaoSobrePersonagem.text = marvel.getDescricao()
+        binding.descricaoNomePersonagem.text = marvel.nome
+        binding.descricaoSobrePersonagem.text = marvel.descricao
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

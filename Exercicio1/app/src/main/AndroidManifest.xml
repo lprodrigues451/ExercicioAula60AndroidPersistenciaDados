@@ -14,10 +14,13 @@
         android:theme="@style/Theme.Marvel"
         tools:targetApi="31">
         <activity
-            android:name=".detalhe.Detalhe"
+            android:name=".ui.marvelliist.view.MarvelListaActivity"
             android:exported="false" />
         <activity
-            android:name=".home.MainActivity"
+            android:name="br.com.zup.marvel.ui.detail.view.DetalheActivity"
+            android:exported="false" />
+        <activity
+            android:name="br.com.zup.marvel.ui.home.view.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

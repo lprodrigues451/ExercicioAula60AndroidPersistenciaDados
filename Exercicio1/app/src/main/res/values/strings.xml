@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Marvel</string>
     <string name="nome_personagem">nome do personagem</string>
+    <string name="informe_o_nome_do_filme">Informe o nome do filme</string>
+    <string name="informe_o_detalhe_do_filme">Informe o detalhe do filme</string>
+    <string name="adicionar_filme">ADICIONAR FILME</string>
+    <string name="ver_filme">VER FILME</string>
 </resources>
