@@ -43,14 +43,22 @@
         android:id="@+id/bVerFilme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_200"
         android:layout_margin="@dimen/margin_16"
+        android:backgroundTint="@color/teal_200"
         android:text="@string/ver_filme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bAdicionar" />
 
-
-
+    <Button
+        android:id="@+id/bClearMoviesMarvel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:text="@string/limpa_todo_os_filmes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bVerFilme" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

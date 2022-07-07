@@ -20,7 +20,7 @@
             android:name="br.com.zup.marvel.ui.detail.view.DetalheActivity"
             android:exported="false" />
         <activity
-            android:name="br.com.zup.marvel.ui.home.view.HomeActivity"
+            android:name=".ui.home.view.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

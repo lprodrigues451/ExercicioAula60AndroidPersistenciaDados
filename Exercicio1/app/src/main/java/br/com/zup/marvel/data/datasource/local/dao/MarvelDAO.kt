@@ -1,9 +1,6 @@
 package br.com.zup.marvel.data.datasource.local.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import br.com.zup.marvel.domain.model.Marvel
 
 @Dao
@@ -15,4 +12,9 @@ interface MarvelDAO {
 //Replace substitui
     @Insert(onConflict = OnConflictStrategy.REPLACE)// Ou IGNORE para não adicionar filme iguais
     fun insertMarvel(marvel: Marvel)
+
+    @Query("DELETE FROM filmes_marvel")
+    fun deleteAllList()
+
+
 }

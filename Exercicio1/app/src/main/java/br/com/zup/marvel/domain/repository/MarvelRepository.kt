@@ -10,4 +10,8 @@ class MarvelRepository(private val marvelDAO: MarvelDAO) {
     suspend fun insertMovie(marvel: Marvel){
         marvelDAO.insertMarvel(marvel)
     }
+
+    suspend fun deleteAllList(){
+        marvelDAO.deleteAllList()
+    }
 }

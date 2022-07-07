@@ -19,12 +19,18 @@ class MarvelUseCase(application: Application) {
         }
     }
 
-    suspend fun insertMarvel(marvel: Marvel): ViewState<Marvel> {
+     suspend fun insertMarvel(marvel: Marvel): ViewState<Marvel> {
         return try {
             movieRepository.insertMovie(marvel)
             ViewState.Success(marvel)
         } catch (ex: Exception) {
+            ex.printStackTrace()
             ViewState.Error(Exception("Não foi possível cadastrar o filme da marvel!"))
         }
     }
+
+    suspend fun deleteAllList(){
+            movieRepository.deleteAllList()
+    }
+
 }

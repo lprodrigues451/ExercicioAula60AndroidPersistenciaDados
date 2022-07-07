@@ -11,7 +11,7 @@ import kotlinx.android.parcel.Parcelize
 data class Marvel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "cod_filme")
-    var codMarvel: Long = 1,
+    var codMarvel: Long?= null ,
 
     @ColumnInfo(name = "nome")
     var nome: String,

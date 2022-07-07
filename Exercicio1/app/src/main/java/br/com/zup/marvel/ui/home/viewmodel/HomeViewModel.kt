@@ -16,15 +16,31 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val marvelAddState = MutableLiveData<ViewState<Marvel>>()
 
     fun insertMarvel(marvel: Marvel) {
-        viewModelScope.launch {
-            try {
-                val response = withContext(Dispatchers.IO) {
-                    marvelUseCase.insertMarvel(marvel)
+
+        if (marvel.nome.isNotEmpty()
+            && marvel.descricao.isNotEmpty()
+        ) {
+            viewModelScope.launch {
+                try {
+                    val response = withContext(Dispatchers.IO) {
+                        marvelUseCase.insertMarvel(marvel)
+                    }
+                    marvelAddState.value = response
+                } catch (ex: Exception) {
+                    ex.printStackTrace()
+                    marvelAddState.value =
+                        ViewState.Error(Throwable("Não foi possível inserir o filme!"))
                 }
-                marvelAddState.value = response
-            } catch (ex: Exception) {
-                marvelAddState.value =
-                    ViewState.Error(Throwable("Não foi possível inserir o filme!"))
+            }
+        } else {
+            marvelAddState.value =
+                ViewState.Error(Throwable("Algum campo vazio"))        }
+    }
+
+    fun deleteAllList(){
+        viewModelScope.launch {
+            val response = withContext(Dispatchers.IO){
+                marvelUseCase.deleteAllList()
             }
         }
     }
