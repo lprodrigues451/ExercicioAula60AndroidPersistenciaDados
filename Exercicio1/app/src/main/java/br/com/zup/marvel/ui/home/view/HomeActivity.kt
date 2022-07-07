@@ -33,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
                 is ViewState.Success -> {
                     Toast.makeText(this, "Filme cadastrado com sucesso!", Toast.LENGTH_LONG)
                         .show()
+                    clearFieldEdition()
                 }
                 is ViewState.Error -> {
                     Toast.makeText(this, "${it.throwable.message}", Toast.LENGTH_LONG)
@@ -44,23 +45,20 @@ class HomeActivity : AppCompatActivity() {
 
     private fun clickOnButtonAdd() {
         binding.bAdicionar.setOnClickListener {
-            val nome = binding.etNomeFillme.text.toString()
-            val descricao = binding.etInformaDetalhe.text.toString()
-
-            if (nome.isNotEmpty()
-                && descricao.isNotEmpty()
-            ) {
+//            val nome = binding.etNomeFillme.text.toString()
+//            val descricao = binding.etInformaDetalhe.text.toString()
+//
+//            if (nome.isNotEmpty()
+//                && descricao.isNotEmpty()
+//            ) {
+//            TODO MOSTRAR PARA O MENTOR
                 viewModel.insertMarvel(
                     Marvel(
-                        nome = nome,
-                        descricao = descricao
+                        nome = binding.etNomeFillme.text.toString(),
+                        descricao = binding.etInformaDetalhe.text.toString()
                     )
                 )
-                clearFieldEdition()
-            } else {
-                Toast.makeText(this, "Por favor preencha o campo vazio!", Toast.LENGTH_LONG)
-                    .show()
-            }
+
         }
     }
 

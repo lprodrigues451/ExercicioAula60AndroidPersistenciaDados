@@ -34,7 +34,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             }
         } else {
             marvelAddState.value =
-                ViewState.Error(Throwable("Algum campo vazio"))        }
+                ViewState.Error(Throwable("Por favor preencha o campo vazio!"))        }
     }
 
     fun deleteAllList(){
