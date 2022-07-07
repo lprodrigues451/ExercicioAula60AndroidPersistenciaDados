@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_16"
-        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:backgroundTint="@color/red"
         android:text="@string/limpa_todo_os_filmes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
